@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  react:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/learn-frontend
+    #   - node_modules:/home/node/app/node_modules
+    ports:
+      - 5173:5173
+    command: sh -c "cd learn-frontend && npm run dev"
+# volumes:
+#   node_modules:
